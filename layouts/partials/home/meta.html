@@ -1,0 +1,42 @@
+<div class="meta">
+{{- if isset $.Params "authors" -}}
+  <span>
+  {{- $len := len $.Params.authors -}}
+  {{- range $idx, $author := $.Params.authors -}}
+    {{- with $.Site.GetPage "authors" -}}
+      {{- with .GetPage $author }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>{{- if lt $idx (sub $len 2) -}}{{ i18n "delimit" }}{{ end }}{{- if eq $idx (sub $len 2) -}}{{ i18n "delimitLast" }}{{ end }}
+      {{ end -}}
+    {{- end -}}
+  {{- end -}}
+  </span>
+{{- else -}}
+{{- if isset $.Params "author" -}}
+  {{- if isset .Site.Data "_authors" -}}
+  {{- $author := index .Site.Data._authors $.Params.author -}}
+  <span>{{ $author.name }}</span>
+  {{- else -}}
+  <span>{{ $.Params.author }}</span>
+{{- end -}}
+{{- end -}}
+{{- end }}
+<span>{{ i18n "postedIn" }}</span>
+<span>
+{{- if isset $.Params "categories" -}}
+{{ $len := len $.Params.categories -}}
+{{- range $idx, $cat := $.Params.categories -}}
+  {{- with $.Site.GetPage "categories" -}}
+    {{ with .GetPage $cat }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>{{- if lt $idx (sub $len 2) -}}{{ i18n "delimit" }}{{ end }}{{- if eq $idx (sub $len 2) -}}{{ i18n "delimitLast" }}{{ end }}
+    {{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- else -}}
+{{ i18n "noCategory" }}
+{{- end -}}
+</span>
+</div>
+<div class="text-muted">
+  <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+  <span class="reading-iime">&middot; {{ i18n "readingTime" .ReadingTime }}</span>
+</div>

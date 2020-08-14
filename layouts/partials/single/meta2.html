@@ -1,0 +1,60 @@
+<div class="meta d-flex">
+  {{- if isset $.Params "authors" -}}
+  <div class="d-inline-block mr-2">
+    {{- range $idx, $author := $.Params.authors -}}
+    {{- with $.Site.GetPage "authors" . }}
+    <a href="{{ .Permalink }}"
+       class="d-inline-block avatar mt-1 {{ if eq $idx 0 }}ml-0{{ else }}ml-n3{{ end }}">
+      <img src="{{ with .Params.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ .Params.gravatar | md5 }}?s=100&d=robohash{{ end }}"
+           alt="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}"
+           title="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}">
+    </a>
+    {{- end -}}
+    {{- end -}}
+  </div>
+  {{- end -}}
+  <div class="d-inline-block authors">
+    <div class="text-muted">
+    {{- if isset $.Params "authors" -}}
+      <span>
+      {{- $len := len $.Params.authors -}}
+      {{- range $idx, $author := $.Params.authors -}}
+      {{- with $.Site.GetPage "authors" . }}
+        <a href="{{ .Permalink }}"
+           class="author">{{ .Title }}</a>{{- if lt $idx (sub $len 2) -}}{{ i18n "delimit" }}{{ end }}{{- if eq $idx (sub $len 2) -}}{{ i18n "delimitLast" }}{{ end }}
+      {{ end -}}
+      {{- end -}}
+      </span>
+    {{- else -}}
+    {{- if isset $.Params "author" -}}
+      {{- if isset .Site.Data "_authors" -}}
+      {{- $author := index .Site.Data._authors $.Params.author -}}
+      <span>{{ $author.name }}</span>
+      {{- else -}}
+      <span>{{ $.Params.author }}</span>
+    {{- end -}}
+    {{- end -}}
+    {{- end }}
+    <!--
+    <span>in</span>
+    <span>
+    {{ $len := len $.Params.categories -}}
+    {{- range $idx, $cat := $.Params.categories -}}
+      {{- with $.Site.GetPage "categories" -}}
+        {{ with .GetPage $cat }}
+        <a href="{{ .Permalink }}" class="category">{{ .Title }}</a>{{- if lt $idx (sub $len 2) -}}{{ i18n "delimit" }}{{ end }}{{- if eq $idx (sub $len 2) -}}{{ i18n "delimitLast" }}{{ end }}
+        {{ end -}}
+      {{- end -}}
+    {{- end -}}
+    </span>
+  -->
+    </div>
+    <div class="text-muted">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      &middot; {{ i18n "readingTime" .ReadingTime }}
+    </div>
+  </div>
+  <div class="d-none d-md-inline-block ml-auto">
+    {{ partial "single/share.html" . }}
+  </div>
+</div>

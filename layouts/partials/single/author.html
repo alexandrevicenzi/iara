@@ -1,0 +1,51 @@
+{{ if isset .Params "authors" }}
+<div class="border-top py-4">
+  {{- range $idx, $author := .Params.authors -}}
+  {{- with $.Site.GetPage "authors" -}}
+  {{- with .GetPage $author }}
+  <div class="author-info">
+    <div class="author-avatar d-inline-block position-absolute mt-2">
+      <a href="{{ .Permalink }}">
+        <img class="author-img"
+             src="{{ with .Params.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ .Params.gravatar | md5 }}?s=100&d=robohash{{ end }}"
+             alt="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}">
+      </a>
+    </div>
+    <div class="author-meta d-inline-block align-top">
+      {{ if eq $idx 0 }}
+      <span class="small text-muted text-uppercase">{{ i18n "writtenBy" }}</span>
+      {{ end }}
+      <h2 {{ if eq $idx 0 }}class="m-0"{{ end }}>
+        <a href="{{ .Permalink }}">{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}</a>
+      </h2>
+      <span class="small text-muted">{{ .Params.bio }}</span>
+    </div>
+  </div>
+  {{ end -}}
+  {{- end -}}
+  {{- end }}
+</div>
+{{- else -}}
+{{- if isset .Params "author" -}}
+  {{- if isset $.Site.Data "_authors" -}}
+  {{- $author := index $.Site.Data._authors .Params.author }}
+  <div class="border-top pt-4 pb-5">
+    <div class="author-avatar d-inline-block position-absolute mt-2">
+      <img class="author-img"
+           src="{{ with $author.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ $author.gravatar | md5 }}?s=100&d=robohash{{ end }}"
+           alt="{{ $author.name }}">
+    </div>
+    <div class="author-meta d-inline-block align-top">
+      <span class="text-muted text-uppercase small">{{ i18n "writtenBy" }}</span>
+      <h2 class="m-0">{{ $author.name }}</h2>
+      <span class="text-muted">{{ $author.bio }}</span>
+    </div>
+  </div>
+  {{ else }}
+  <div class="border-top pt-4 pb-5">
+    <span class="text-muted text-uppercase small">{{ i18n "writtenBy" }}</span>
+    <h2 class="m-0">{{ $.Params.author }}</h2>
+  </div>
+  {{ end -}}
+{{- end -}}
+{{- end -}}

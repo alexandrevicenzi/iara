@@ -1,0 +1,79 @@
+<aside class="sidebar mt-5 ml-5">
+  {{ with .Site.Params.Sidebar.Featured }}
+  <div class="featured">
+    <h3 class="pb-2 border-bottom">{{ i18n "featured" }}</h3>
+    <ul class="list-unstyled">
+      {{ range $idx, $item := .Item }}
+        {{ with $.Site.GetPage $item.path }}
+        <li class="mb-2">
+          {{ if $.Site.Params.Sidebar.Featured.index }}
+          <div class="counter text-muted mr-2">
+            <span>{{ printf "%02d" (add $idx 1) }}</span>
+          </div>
+          {{ end }}
+          <div class="article">
+            <div class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+            {{ if isset .Params "author" }}
+            {{ $author := index $.Site.Data._authors .Params.author }}
+            <div class="author">
+              {{ with $.Site.GetPage "authors" .Params.author }}
+                <a href="{{ .Permalink }}">{{ $author.name }}</a>
+              {{ else }}
+                {{ $author.name }}
+              {{ end }}
+            </div>
+            {{ end }}
+            <div class="meta text-muted">
+              <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+              &middot; {{ i18n "readingTime" .ReadingTime }}
+            </div>
+          </div>
+        </li>
+        {{ else }}
+        <li>
+          <div class="counter text-muted mr-2">
+            <span>{{ printf "%02d" (add $idx 1) }}</span>
+          </div>
+          <div class="article">
+            <div class="title"><span>Error: Page not found!</span></div>
+            <div class="meta text-muted"><span>{{ $item.path }}</span></div>
+          </div>
+        </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{ partial "custom/sidebar.html" . }}
+
+  {{ with .Site.Params.Sidebar.Categories }}
+  {{ if .show }}
+  <div class="categories mt-5">
+    <h3 class="pb-2 border-bottom">{{ i18n "categories" }}</h3>
+    <ul class="list-unstyled">
+      {{ range $.Site.Taxonomies.categories }}
+      <li>
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>{{ if $.Site.Params.Sidebar.Categories.count }} ({{ .Count }}){{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{ with .Site.Params.Sidebar.Tags }}
+  {{ if .show }}
+  <div class="tags mt-5">
+    <h3 class="pb-2 border-bottom">{{ i18n "tags" }}</h3>
+    <ul class="list-unstyled tags">
+      {{ range $.Site.Taxonomies.tags }}
+      <li class="d-inline-block mb-1 mr-1">
+        <a href="{{ .Page.Permalink }}" class="tag-link">{{ .Page.Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  {{ end }}
+</aside>

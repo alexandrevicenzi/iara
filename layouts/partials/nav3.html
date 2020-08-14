@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+  <a class="navbar-brand text-decoration-none" href="{{ .Site.BaseURL }}">
+    {{ with .Site.Params.logo }}
+    <img src="{{ . | absURL }}"
+         width="32"
+         height="32"
+         alt="Logo"
+         class="d-inline-block align-top"
+         loading="lazy">
+    {{ end }}
+    {{ with .Site.Params.Title }}{{ . }}{{ else }}{{ $.Site.Title }}{{ end }}
+  </a>
+
+  <button class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar"
+          aria-controls="navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav ml-auto">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+        <li class="nav-item dropdown {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+          <a class="nav-link dropdown-toggle"
+             href="#"
+             id="navbarDropdown"
+             role="button"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">
+            {{ .Pre }}
+            {{ .Name }}
+            {{ .Post }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL }}">
+              {{ .Pre }}
+              {{ .Name }}
+              {{ .Post }}
+            </a>
+            {{ end }}
+          </div>
+        </li>
+        {{ else }}
+        <li class="nav-item {{ if eq $currentPage.URL .URL }}active{{ end }}">
+          <a class="nav-link" href="{{ .URL }}">
+            {{ .Pre }}
+            {{ .Name }}
+            {{ .Post }}
+          </a>
+        </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+
+    {{ partial "search-nav.html" . }}
+  </div>
+</nav>
+
+
+
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div class="pt-2">
+      <a href="#" class="nav-scroller-left py-2">
+        <svg class="svgIcon-use" width="21" height="21">
+          <path d="M13.402 16.957l-6.478-6.479L13.402 4l.799.71-5.768 5.768 5.768 5.77z" fill-rule="evenodd"></path>
+        </svg>
+      </a>
+    </div>
+    <div class="nav-scroller">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="#">World</a>
+        <a class="p-2 text-muted" href="#">U.S.</a>
+        <a class="p-2 text-muted" href="#">Technology</a>
+        <a class="p-2 text-muted" href="#">Design</a>
+        <a class="p-2 text-muted" href="#">Culture</a>
+        <a class="p-2 text-muted" href="#">Business</a>
+ <!--        <a class="p-2 text-muted" href="#">Politics</a>
+        <a class="p-2 text-muted" href="#">Opinion</a>
+        <a class="p-2 text-muted" href="#">Science</a>
+        <a class="p-2 text-muted" href="#">Health</a>
+        <a class="p-2 text-muted" href="#">Style</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+        <a class="p-2 text-muted" href="#">Travel</a> -->
+      </nav>
+    </div>
+    <div class="pt-2">
+      <a href="#" class="nav-scroller-right py-2">
+        <svg class="svgIcon-use" width="21" height="21">
+          <path d="M8.3 4.2l6.4 6.3-6.4 6.3-.8-.8 5.5-5.5L7.5 5" fill-rule="evenodd"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

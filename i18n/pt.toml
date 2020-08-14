@@ -1,0 +1,57 @@
+[categories]
+other = "Categorias"
+
+[tags]
+other = "Tags"
+
+[featured]
+other = "Destaque"
+
+[writtenBy]
+other = "Escrito por"
+
+[postedIn]
+other = "em"
+
+[comments]
+other = "Comentários"
+
+[articles]
+other = "Artigos"
+
+[categoryTitle]
+other = "Categoria: {{ .Title }}"
+
+[tagTitle]
+other = "Tag: {{ .Title }}"
+
+[taxonomyTitle]
+other = "Taxonomia: {{ .Title }}"
+
+[search]
+other = "Pesquisar..."
+
+[delimit]
+other = ", "
+
+[delimitLast]
+other = " e "
+
+[readingTime]
+one = "1 minuto de leitura"
+other = "{{ .Count }} minutos de leitura"
+
+[noCategory]
+other = "Sem categoria"
+
+[email]
+other = "Email"
+
+[subject]
+other = "Assunto"
+
+[message]
+other = "Mensagem"
+
+[submit]
+other = "Enviar"

@@ -1,0 +1,17 @@
+{{ define "main" -}}
+<section class="container taxonomy">
+  <ul class="list-unstyled mt-3 mb-5">
+    <h1>{{ i18n "categoryTitle" . }}</h1>
+    {{ range .Data.Pages -}}
+    <li class="my-2">
+      <div class="d-flex justify-content-between">
+        <a href="{{ .Permalink }}" class="col-8 col-md-9 p-0 text-truncate">{{ .Title }}</a>
+        {{ if eq .Kind "page" }}
+        <time class="post-list" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        {{ end }}
+      </div>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

@@ -1,0 +1,17 @@
+{{ define "main" -}}
+<div class="container home mb-5">
+  {{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.MainSections -}}
+  {{- $paginator := .Paginate $pages -}}
+  <section class="article-list">
+    {{- range $paginator.Pages }}
+    {{ partial "home/article.html" . }}
+    {{- end }}
+
+    <div class="my-5">
+      {{ template "_internal/pagination.html" . }}
+    </div>
+  </section>
+
+  {{ partial "home/sidebar.html" . }}
+</div>
+{{- end }}

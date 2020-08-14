@@ -1,0 +1,57 @@
+[categories]
+other = "Categories"
+
+[tags]
+other = "Tags"
+
+[featured]
+other = "Featured"
+
+[writtenBy]
+other = "Written By"
+
+[postedIn]
+other = "in"
+
+[comments]
+other = "Comments"
+
+[articles]
+other = "Articles"
+
+[categoryTitle]
+other = "Category: {{ .Title }}"
+
+[tagTitle]
+other = "Tag: {{ .Title }}"
+
+[taxonomyTitle]
+other = "Taxonomy: {{ .Title }}"
+
+[search]
+other = "Search"
+
+[delimit]
+other = ", "
+
+[delimitLast]
+other = ", and "
+
+[readingTime]
+one = "1 min read"
+other = "{{ .Count }} min read"
+
+[noCategory]
+other = "No category"
+
+[email]
+other = "Email"
+
+[subject]
+other = "Subject"
+
+[message]
+other = "Message"
+
+[submit]
+other = "Submit"

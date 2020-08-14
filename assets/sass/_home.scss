@@ -1,0 +1,116 @@
+.home {
+  display: flex;
+
+  a {
+    text-decoration: none;
+  }
+
+  .article-list {
+    margin: 0 auto;
+    max-width: 680px;
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .article-item {
+    display: flex;
+
+    .title {
+      font-size: 1.2em;
+
+    }
+
+    .title,
+    .meta {
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    article {
+      flex: 1 1 auto;
+
+      footer {
+        font-size: 0.8em;
+      }
+    }
+
+    .cover {
+      margin: auto 0 auto 1.2rem;
+      flex: 0 0 auto;
+
+      img {
+        max-width: 120px;
+        max-height: 120px;
+      }
+
+      .fill {
+        width: 120px;
+      }
+    }
+  }
+
+  .pagination {
+    @extend .justify-content-center;
+
+    .page-item.active .page-link {
+      background-color: $gray-700;
+      border-color: $gray-700;
+      color: $white;
+    }
+  }
+
+  .sidebar {
+    flex: 0 0 auto;
+    max-width: 35%;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .tags {
+      max-width: 300px;
+    }
+
+    .tag-link:hover {
+      text-decoration: none;
+    }
+
+    .featured {
+
+      ul > li {
+        display: flex;
+      }
+
+      .counter {
+        flex: 1 1 auto;
+        font-size: 2.5rem;
+        line-height: 3rem;
+      }
+
+      .article {
+        flex: 0 0 auto;
+      }
+
+      .title {
+        font-weight: 600;
+      }
+
+      .author {
+        font-size: 1rem;
+      }
+
+      .meta {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .home {
+    .sidebar {
+      display: none;
+    }
+  }
+}
