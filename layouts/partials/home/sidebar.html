@@ -24,7 +24,8 @@
             </div>
             {{ end }}
             <div class="meta text-muted">
-              <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+              {{- $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" -}}
+              <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format $dateFormat }}</time>
               &middot; {{ i18n "readingTime" .ReadingTime }}
             </div>
           </div>
