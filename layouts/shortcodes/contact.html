@@ -11,5 +11,13 @@
     <label for="message">{{ i18n "message" }}</label>
     <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
   </div>
+  {{ with .Params.recaptcha }}
+  <div class="form-group text-center">
+    <div class="g-recaptcha d-inline-block" data-sitekey="{{ . }}"></div>
+  </div>
+  {{ end }}
   <button type="submit" class="btn btn-success btn-block">{{ i18n "submit" }}</button>
 </form>
+{{ with .Params.recaptcha }}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{{ end }}

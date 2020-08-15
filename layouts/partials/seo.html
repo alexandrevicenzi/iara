@@ -1,3 +1,5 @@
+<meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
+
 {{ template "_internal/google_news.html" . }}
 
 {{ template "_internal/schema.html" . }}

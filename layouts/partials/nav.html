@@ -8,9 +8,8 @@
          class="d-inline-block align-top"
          loading="lazy">
     {{ end }}
-    {{ with .Site.Params.Title }}{{ . }}{{ else }}{{ $.Site.Title }}{{ end }}
+    {{- with .Site.Params.Title -}}{{ . }}{{- else -}}{{ $.Site.Title }}{{- end -}}
   </a>
-
   <div class="d-flex flex-row order-2 order-lg-3">
     {{ if .Site.Params.Search.Enabled }}
     <ul class="navbar-nav flex-row">
@@ -24,7 +23,6 @@
       </li>
     </ul>
     {{ end }}
-
     <button class="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -35,12 +33,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
-
   <div class="collapse navbar-collapse order-3 order-lg-2" id="navbar">
     <ul class="navbar-nav ml-auto">
-      {{ $currentPage := . }}
-      {{ range .Site.Menus.main }}
-        {{ if .HasChildren }}
+      {{- $currentPage := . -}}
+      {{ range .Site.Menus.main -}}
+        {{- if .HasChildren -}}
         <li class="nav-item dropdown {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
           <a class="nav-link dropdown-toggle"
              href="#"
@@ -54,16 +51,16 @@
             {{ .Post }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {{ range .Children }}
+            {{ range .Children -}}
             <a class="dropdown-item" href="{{ .URL }}">
               {{ .Pre }}
               {{ .Name }}
               {{ .Post }}
             </a>
-            {{ end }}
+            {{ end -}}
           </div>
         </li>
-        {{ else }}
+        {{- else -}}
         <li class="nav-item {{ if eq $currentPage.URL .URL }}active{{ end }}">
           <a class="nav-link" href="{{ .URL }}">
             {{ .Pre }}
@@ -71,12 +68,11 @@
             {{ .Post }}
           </a>
         </li>
-        {{ end }}
-      {{ end }}
+        {{ end -}}
+      {{ end -}}
     </ul>
   </div>
 </nav>
-
 {{ if and (.IsHome) (.Site.Menus.carousel) }}
 <div class="container mt-2">
   <div class="d-flex justify-content-between">
@@ -89,13 +85,13 @@
     </div>
     <div class="nav-scroller">
       <nav class="nav d-flex justify-content-between">
-        {{ range .Site.Menus.carousel }}
+        {{ range .Site.Menus.carousel -}}
         <a class="p-2 text-muted" href="{{ .URL }}">
           {{ .Pre }}
           {{ .Name }}
           {{ .Post }}
         </a>
-        {{ end }}
+        {{ end -}}
       </nav>
     </div>
     <div class="nav-scroller-btn">
