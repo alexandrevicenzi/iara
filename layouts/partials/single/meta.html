@@ -39,6 +39,21 @@
     {{- end -}}
     {{- end -}}
     {{- end }}
+    <span>{{ i18n "postedIn" }}</span>
+    <span>
+    {{- if isset $.Params "categories" -}}
+    {{ $len := len $.Params.categories -}}
+    {{- range $idx, $cat := $.Params.categories -}}
+      {{- with $.Site.GetPage "categories" -}}
+        {{ with .GetPage $cat }}
+        <a href="{{ .Permalink }}" class="text-decoration-none">{{ .Title }}</a>{{- if lt $idx (sub $len 2) -}}{{ i18n "delimit" }}{{ end }}{{- if eq $idx (sub $len 2) -}}{{ i18n "delimitLast" }}{{ end }}
+        {{ end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- else -}}
+    {{ i18n "noCategory" }}
+    {{- end -}}
+    </span>
     </div>
     <div class="text-muted">
       {{- $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" -}}
