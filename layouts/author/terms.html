@@ -1,15 +1,30 @@
 {{ define "main" -}}
-<section class="container taxonomy">
+<section class="container taxonomy authors">
   <ul class="list-unstyled mt-3 mb-5">
     <h1>{{ .Title }}</h1>
+
+    <article>
+      {{ .Content }}
+    </article>
+
     {{ range .Data.Pages -}}
     <li class="my-2">
-      <div class="d-flex justify-content-between">
-        <a href="{{ .Permalink }}" class="col-8 col-md-9 p-0 text-truncate">{{ .Title }}</a>
-        {{ if eq .Kind "page" }}
-        {{- $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" -}}
-        <time class="post-list" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format $dateFormat }}</time>
-        {{ end }}
+      <div class="d-flex">
+        <div>
+          <a href="{{ .Permalink }}"
+             class="d-inline-block avatar mt-1">
+            <img src="{{ with .Params.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ .Params.gravatar | md5 }}?s=60&d=robohash{{ end }}"
+                 width="60"
+                 height="60"
+                 class="rounded-circle border border-light"
+                 alt="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}"
+                 title="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}">
+          </a>
+        </div>
+        <div class="ml-2">
+          <a href="{{ .Permalink }}" class="text-decoration-none">{{ .Title }}</a>
+          <a href="{{ .Permalink }}" class="text-decoration-none "><p class="small text-muted">{{ .Params.bio }}</p></a>
+        </div>
       </div>
     </li>
     {{- end }}
