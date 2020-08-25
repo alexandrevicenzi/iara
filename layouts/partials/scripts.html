@@ -1,5 +1,5 @@
-<script src="{{ relURL `/vendor/fontawesome/js/all.min.js` }}"></script>
-<script src="{{ relURL `/vendor/jquery/jquery.min.js` }}"></script>
+<script type="text/javascript" async src="{{ relURL `/vendor/fontawesome/js/all.min.js` }}"></script>
+<script type="text/javascript" src="{{ relURL `/vendor/jquery/jquery.min.js` }}"></script>
 
 {{- $index := resources.Get "js/bootstrap/index.js" -}}
 {{- $alert := resources.Get "js/bootstrap/alert.js" -}}
@@ -13,21 +13,21 @@
 {{- $bootstrapmodules := slice $index $util $alert $button $collapse $dropdown $modal $tab -}}
 
 {{ if .Site.IsServer }}
-  {{- $bootstrap := $bootstrapmodules | resources.Concat "js/bootstrap.js" -}}
-  <script src="{{ $bootstrap.RelPermalink }}"></script>
+  {{ $bootstrap := $bootstrapmodules | resources.Concat "js/bootstrap.js" }}
+  <script type="text/javascript" src="{{ $bootstrap.RelPermalink }}"></script>
 
-  {{- $iara := resources.Get "js/iara.js" -}}
-  <script src="{{ $iara.RelPermalink }}"></script>
+  {{ $iara := resources.Get "js/iara.js" }}
+  <script type="text/javascript" src="{{ $iara.RelPermalink }}"></script>
 {{ else }}
-  {{- $bootstrap := $bootstrapmodules | resources.Concat "js/bootstrap.js" | resources.Minify | resources.Fingerprint -}}
-  <script src="{{ $bootstrap.RelPermalink }}"></script>
+  {{ $bootstrap := $bootstrapmodules | resources.Concat "js/bootstrap.js" | resources.Minify | resources.Fingerprint }}
+  <script type="text/javascript" src="{{ $bootstrap.RelPermalink }}"></script>
 
-  {{- $iara := resources.Get "js/iara.js" | resources.Minify | resources.Fingerprint -}}
-  <script src="{{ $iara.RelPermalink }}"></script>
+  {{ $iara := resources.Get "js/iara.js" | resources.Minify | resources.Fingerprint }}
+  <script type="text/javascript" src="{{ $iara.RelPermalink }}"></script>
 {{ end }}
 
 {{ template "_internal/google_analytics_async.html" . }}
 
 {{ with .Site.Params.addthis.pubid }}
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ . }}"></script>
+<script type="text/javascript" defer src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ . }}"></script>
 {{ end }}
