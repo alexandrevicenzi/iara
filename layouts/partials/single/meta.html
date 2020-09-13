@@ -1,11 +1,12 @@
 <div class="meta d-flex">
   {{- if isset $.Params "authors" -}}
   <div class="d-inline-block mr-2">
+    <div class="d-inline-flex">
     {{- range $idx, $author := $.Params.authors -}}
     {{- with $.Site.GetPage "authors" -}}
     {{- with .GetPage $author }}
     <a href="{{ .Permalink }}"
-       class="d-inline-block avatar mt-1 {{ if eq $idx 0 }}ml-0{{ else }}ml-n3{{ end }}">
+       class="d-inline-block avatar mt-1 {{ if eq $idx 0 }}ml-0{{ else }}ml-n2{{ end }}">
       <img src="{{ with .Params.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ .Params.gravatar | md5 }}?s=100&d=robohash{{ end }}"
            alt="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}"
            title="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}">
@@ -13,6 +14,7 @@
     {{ end -}}
     {{- end -}}
     {{- end -}}
+    </div>
   </div>
   {{- end -}}
   <div class="d-inline-block authors">
@@ -62,6 +64,32 @@
     </div>
   </div>
   <div class="d-none d-md-inline-block ml-auto">
-    {{ partial "single/share.html" . }}
+    {{ if (and (ne .Params.DisableShare true) (ne .Params.disable_share true)) -}}
+    <div class="d-inline-flex share-buttons text-center">
+      <a class="twitter-share-button"
+         href="#"
+         title="Share on Twitter"
+         data-url="{{ .Permalink }}"
+         data-text="{{ .Title }}"><i class="fab fa-twitter"></i></a>
+
+      <a class="linkedin-share-button"
+         href="#"
+         title="Share on LinkedIn"
+         data-url="{{ .Permalink }}"
+         data-text="{{ .Title }}"><i class="fab fa-linkedin-in"></i></a>
+
+      <a class="facebook-share-button"
+         href="#"
+         title="Share on Facebook"
+         data-url="{{ .Permalink }}"
+         data-text="{{ .Title }}"><i class="fab fa-facebook"></i></a>
+
+      <a class="pinterest-share-button"
+         href="#"
+         title="Share on Pinterest"
+         data-url="{{ .Permalink }}"
+         data-text="{{ .Title }}"><i class="fab fa-pinterest"></i></a>
+    </div>
+    {{- end }}
   </div>
 </div>
