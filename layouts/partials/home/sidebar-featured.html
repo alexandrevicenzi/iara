@@ -1,0 +1,32 @@
+{{ with .Site.Params.Sidebar.Featured }}
+<div class="featured">
+  <h3 class="pb-2 border-bottom">{{ i18n "featured" }}</h3>
+  <ul class="list-unstyled">
+    {{ range $idx, $item := .Item }}
+      {{ with $.Site.GetPage $item.path }}
+      <li class="mb-2">
+        {{ if $.Site.Params.Sidebar.Featured.index }}
+        <div class="counter text-muted mr-2">
+          <span>{{ printf "%02d" (add $idx 1) }}</span>
+        </div>
+        {{ end }}
+        <div class="article">
+          <div class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+          {{ partial "home/meta.html" . }}
+        </div>
+      </li>
+      {{ else }}
+      <li>
+        <div class="counter text-muted mr-2">
+          <span>{{ printf "%02d" (add $idx 1) }}</span>
+        </div>
+        <div class="article">
+          <div class="title"><span>Error: Page not found!</span></div>
+          <div class="meta text-muted"><span>{{ $item.path }}</span></div>
+        </div>
+      </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
