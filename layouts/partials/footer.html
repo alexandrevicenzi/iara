@@ -1,7 +1,7 @@
 <footer class="site-footer mt-auto pt-5">
   <div class="clearfix">
     {{ with .Site.Params.Social }}
-    <div class="social-icons d-lg-inline-block align-top float-lg-left">
+    <div class="social-icons d-xl-inline-block align-top float-xl-left">
       <ul class="list-unstyled">
         {{ range . }}
         <li class="list-inline-item social-icon my-2">
@@ -12,8 +12,8 @@
     </div>
     {{end}}
 
-    {{ if or .Site.Menus.footer1 .Site.Menus.footer2 .Site.Menus.footer3 .Site.Menus.footer4 }}
-    <div class="footer-sections my-md-3 my-lg-0 d-lg-inline-block align-top float-lg-right">
+    {{ if or .Site.Menus.footer1 .Site.Menus.footer2 .Site.Menus.footer3 .Site.Menus.footer4 .Site.Menus.footer5 .Site.Menus.footer6 }}
+    <div class="footer-sections my-md-3 my-xl-0 d-xl-inline-block align-top float-xl-right">
       {{ with .Site.Menus.footer1 }}
       <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
         <ul class="list-unstyled">
@@ -77,13 +77,45 @@
         </ul>
       </div>
       {{ end }}
+
+      {{ with .Site.Menus.footer5 }}
+      <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
+        <ul class="list-unstyled">
+          {{ range . }}
+          <li>
+            <a class="td-n td-h " href="{{ .URL }}">
+              {{ .Pre }}
+              {{ .Name }}
+              {{ .Post }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+      {{ with .Site.Menus.footer6 }}
+      <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
+        <ul class="list-unstyled">
+          {{ range . }}
+          <li>
+            <a class="td-n td-h " href="{{ .URL }}">
+              {{ .Pre }}
+              {{ .Name }}
+              {{ .Post }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
     </div>
     {{ end }}
   </div>
 
   <div class="copyright clearfix">
     <div class="d-md-inline-block float-md-left">
-      <i class="far fa-copyright"></i> {{ with .Site.Params.Copyright }}{{ . }}{{ else }}{{ .Title }}{{ end }} {{ now.Format "2006"}}
+      <i class="far fa-copyright"></i> {{ now.Format "2006"}} {{ with .Site.Params.Copyright }}{{ . }}{{ else }}{{ .Title }}{{ end }}
       {{ with .Site.Params.License }}
       &middot; <a href="{{ .url }}" target="_blank">{{ .name | safeHTML }}</a>
       {{end}}
