@@ -10,4 +10,23 @@
   a:hover {
     text-decoration: underline;
   }
+
+  figure {
+    text-align: center;
+    width: 100%;
+
+    @extend .figure;
+
+    img {
+      @extend .figure-img;
+    }
+
+    figcaption {
+      @extend .figure-caption;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
 }
