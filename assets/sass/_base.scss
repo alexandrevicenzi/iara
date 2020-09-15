@@ -5,3 +5,66 @@
 .btn-search:focus {
   box-shadow: none;
 }
+
+.text-decoration-only-hover {
+  text-decoration: none !important;
+}
+
+.text-decoration-only-hover:hover {
+  text-decoration: underline !important;
+}
+
+// Pagination
+
+.pagination {
+  @extend .justify-content-center;
+
+  .page-item.active .page-link {
+    background-color: $gray-700;
+    border-color: $gray-700;
+    color: $white;
+  }
+}
+
+// Sidebar
+
+.featured-index {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+// Figures
+
+figure {
+  text-align: center;
+  width: 100%;
+
+  @extend .figure;
+
+  img {
+    max-width: 100%;
+
+    @extend .figure-img;
+  }
+
+  figcaption {
+    @extend .figure-caption;
+  }
+}
+
+// Tables
+
+table {
+  @extend .table;
+  @extend .table-sm;
+  @extend .table-bordered;
+  @extend .table-striped;
+}
+
+// Taxonomies
+
+.taxonomy {
+  margin: 0 auto;
+  max-width: 680px;
+  width: 100%;
+}

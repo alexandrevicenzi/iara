@@ -5,7 +5,7 @@
   <ul class="list-unstyled">
     {{ range $.Site.Taxonomies.categories }}
     <li>
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>{{ if $.Site.Params.Sidebar.Categories.count }} ({{ .Count }}){{ end }}
+      <a href="{{ .Page.Permalink }}" class="text-decoration-only-hover">{{ .Page.Title }}</a>{{ if $.Site.Params.Sidebar.Categories.count }} ({{ .Count }}){{ end }}
     </li>
     {{ end }}
   </ul>

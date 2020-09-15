@@ -5,24 +5,41 @@
     {{ range $idx, $item := .Item }}
       {{ with $.Site.GetPage $item.path }}
       <li class="mb-2">
-        {{ if $.Site.Params.Sidebar.Featured.index }}
-        <div class="counter text-muted mr-2">
-          <span>{{ printf "%02d" (add $idx 1) }}</span>
-        </div>
-        {{ end }}
-        <div class="article">
-          <div class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-          {{ partial "home/meta.html" . }}
+        <div class="row no-gutters">
+          {{ if $.Site.Params.Sidebar.Featured.index }}
+          <div class="col-2 featured-index text-muted">
+            <span>{{ printf "%02d" (add $idx 1) }}</span>
+          </div>
+          {{ end }}
+          <div class="{{ if $.Site.Params.Sidebar.Featured.index }}col-10{{ else }}col-12{{ end }}">
+            <h6 class="mb-0">
+              <a href="{{ .Permalink }}" class="text-decoration-only-hover">{{ .Title }}</a>
+            </h6>
+            <p class="small mb-0">
+              {{ partial "home/meta-author-category.html" . }}
+            </p>
+            <p class="text-muted small mb-0">
+              {{ partial "home/meta-time-reading.html" . }}
+            </p>
+          </div>
         </div>
       </li>
       {{ else }}
       <li>
-        <div class="counter text-muted mr-2">
-          <span>{{ printf "%02d" (add $idx 1) }}</span>
-        </div>
-        <div class="article">
-          <div class="title"><span>Error: Page not found!</span></div>
-          <div class="meta text-muted"><span>{{ $item.path }}</span></div>
+        <div class="row no-gutters">
+          {{ if $.Site.Params.Sidebar.Featured.index }}
+          <div class="col-2 featured-index text-muted">
+            <span>{{ printf "%02d" (add $idx 1) }}</span>
+          </div>
+          {{ end }}
+          <div class="{{ if $.Site.Params.Sidebar.Featured.index }}col-10{{ else }}col-12{{ end }}">
+            <h6 class="mb-0">
+              <a href="{{ .Permalink }}" class="text-decoration-only-hover">Error: Page not found!</a>
+            </h6>
+            <p class="small mb-0">
+              {{ $item.path }}
+            </p>
+          </div>
         </div>
       </li>
       {{ end }}

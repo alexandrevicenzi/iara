@@ -1,16 +1,15 @@
-<div class="meta">
 {{- if isset $.Params "authors" -}}
-  <span>
-  {{- $len := len $.Params.authors -}}
-  {{- range $idx, $author := $.Params.authors -}}
-    {{- with $.Site.GetPage "authors" -}}
-      {{- with .GetPage $author }}
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      <span class="text-muted">{{- if lt $idx (sub $len 2) -}}{{ i18n "delimit" }}{{ end }}{{- if eq $idx (sub $len 2) -}}{{ i18n "delimitLast" }}{{ end }}</span>
-      {{ end -}}
-    {{- end -}}
+<span>
+{{- $len := len $.Params.authors -}}
+{{- range $idx, $author := $.Params.authors -}}
+  {{- with $.Site.GetPage "authors" -}}
+    {{- with .GetPage $author }}
+    <a href="{{ .Permalink }}" class="text-decoration-only-hover">{{ .Title }}</a>
+    <span class="text-muted">{{- if lt $idx (sub $len 2) -}}{{ i18n "delimit" }}{{ end }}{{- if eq $idx (sub $len 2) -}}{{ i18n "delimitLast" }}{{ end }}</span>
+    {{ end -}}
   {{- end -}}
-  </span>
+{{- end -}}
+</span>
 {{- else -}}
 {{- if isset $.Params "author" -}}
   {{- if isset .Site.Data "_authors" -}}
@@ -28,7 +27,7 @@
 {{- range $idx, $cat := $.Params.categories -}}
   {{- with $.Site.GetPage "categories" -}}
     {{ with .GetPage $cat }}
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <a href="{{ .Permalink }}" class="text-decoration-only-hover">{{ .Title }}</a>
     <span class="text-muted">{{- if lt $idx (sub $len 2) -}}{{ i18n "delimit" }}{{ end }}{{- if eq $idx (sub $len 2) -}}{{ i18n "delimitLast" }}{{ end }}</span>
     {{ end -}}
   {{- end -}}
@@ -37,9 +36,3 @@
 {{ i18n "noCategory" }}
 {{- end -}}
 </span>
-<div class="text-muted">
-  {{- $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" -}}
-  <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format $dateFormat }}</time>
-  <span class="reading-iime">&middot; {{ i18n "readingTime" .ReadingTime }}</span>
-</div>
-</div>

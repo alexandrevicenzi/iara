@@ -61,35 +61,13 @@
     }
   }
 
-  table {
-    @extend .table;
-    @extend .table-sm;
-    @extend .table-bordered;
-    @extend .table-striped;
-  }
-
   h1, h2, h3, h4, h5, h6 {
     margin: 1rem 0 0.5rem 0;
   }
 
-  figure {
-    text-align: center;
-    width: 100%;
-
-    @extend .figure;
-
-    img {
-      @extend .figure-img;
-    }
-
-    figcaption {
-      @extend .figure-caption;
-    }
-  }
-
-  img {
-    max-width: 100%;
-  }
+  // img {
+  //   max-width: 100%;
+  // }
 
   .highlight {
     margin-top: 0;
@@ -186,7 +164,6 @@
   }
 }
 
-
 @include media-breakpoint-up(md) {
   .article {
     .author-img {
@@ -203,41 +180,3 @@
     }
   }
 }
-
-// @media screen and (min-width: $grid-breakpoints-md) {
-//   .article {
-//     line-height: 32px;
-//     font-size: 21px;
-//     letter-spacing: -0.003em;
-
-//     blockquote {
-//       margin-left: -20px;
-//       padding-left: 23px;
-//     }
-
-//     .written-by {
-//       letter-spacing: 0.05em;
-//       font-size: 15px;
-//     }
-
-//     .author-name {
-//       line-height: 36px;
-//       font-size: 28px;
-//     }
-
-//     .author-bio {
-//       line-height: 24px;
-//       font-size: 18px;
-//     }
-
-//     .author-img {
-//       width: 80px;
-//       height: 80px;
-//     }
-
-//     .author-info {
-//       padding-left: 102px;
-//     }
-//   }
-
-// }
