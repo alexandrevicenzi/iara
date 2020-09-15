@@ -75,6 +75,11 @@ $(document).ready(function(){
     }
   });
 
+  $("#search-modal").on("shown.bs.modal", function () {
+      // $("#textareaID").focus();
+      $("input[name=search]", this).focus();
+  });
+
   function checkCarousel() {
     if ($(".nav-scroller").length === 0) {
       return;
