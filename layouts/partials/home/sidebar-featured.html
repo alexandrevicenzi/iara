@@ -7,7 +7,7 @@
       <li class="mb-2">
         <div class="row no-gutters">
           {{ if $.Site.Params.Sidebar.Featured.index }}
-          <div class="col-2 featured-index text-muted">
+          <div class="col-2 featured-index">
             <span>{{ printf "%02d" (add $idx 1) }}</span>
           </div>
           {{ end }}
@@ -28,7 +28,7 @@
       <li>
         <div class="row no-gutters">
           {{ if $.Site.Params.Sidebar.Featured.index }}
-          <div class="col-2 featured-index text-muted">
+          <div class="col-2 featured-index">
             <span>{{ printf "%02d" (add $idx 1) }}</span>
           </div>
           {{ end }}
