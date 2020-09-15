@@ -4,12 +4,14 @@
     <div class="text-center">
       {{- with .Params.avatar }}
         <img src="{{ . | absURL }}"
+             loading="lazy"
              class="border rounded-circle mt-2"
              width="150"
              alt="{{ $.Title }}">
       {{- else -}}
       {{- with .Params.gravatar }}
         <img src="https://www.gravatar.com/avatar/{{ . | md5 }}?s=150&d=robohash"
+             loading="lazy"
              class="border rounded-circle mt-2"
              alt="{{ $.Title }}">
       {{ end -}}

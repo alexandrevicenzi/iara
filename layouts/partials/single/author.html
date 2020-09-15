@@ -8,6 +8,7 @@
       <a href="{{ .Permalink }}">
         <img class="author-img"
              src="{{ with .Params.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ .Params.gravatar | md5 }}?s=100&d=robohash{{ end }}"
+             loading="lazy"
              alt="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}">
       </a>
     </div>
@@ -33,6 +34,7 @@
     <div class="author-avatar d-inline-block position-absolute mt-2">
       <img class="author-img"
            src="{{ with $author.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ $author.gravatar | md5 }}?s=100&d=robohash{{ end }}"
+           loading="lazy"
            alt="{{ $author.name }}">
     </div>
     <div class="author-meta d-inline-block align-top">

@@ -19,7 +19,7 @@
     <div class="col-2 m-auto">
       {{- $images := .Resources.ByType "image" -}}
       {{- with $images.GetMatch "{*thumbnail*,*cover*,*feature*,*header*}" -}}
-      <img style="max-width: 120px; max-height: 120px;" src="{{ .Permalink }}" loading="lazy" class="card-img" alt="...">
+      <img style="max-width: 120px; max-height: 120px;" src="{{ .Permalink }}" loading="lazy" class="card-img" alt="{{ $.Title }}">
       {{- else -}}
       {{- with .Params.thumbnail -}}
       <img style="max-width: 120px; max-height: 120px;" src="{{ .image | absURL }}" loading="lazy" class="card-img" alt="{{ with .alt }}{{ . }}{{ else }}{{ $.Title }}{{ end }}">

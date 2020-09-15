@@ -16,6 +16,7 @@
             <img src="{{ with .Params.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ .Params.gravatar | md5 }}?s=60&d=robohash{{ end }}"
                  width="60"
                  height="60"
+                 loading="lazy"
                  class="rounded-circle border border-light"
                  alt="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}"
                  title="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}">
