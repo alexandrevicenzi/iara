@@ -44,6 +44,9 @@ other = "No category"
 [email]
 other = "Email"
 
+[name]
+other = "Name"
+
 [subject]
 other = "Subject"
 

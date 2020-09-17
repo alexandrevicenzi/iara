@@ -44,6 +44,9 @@ other = "Sem categoria"
 [email]
 other = "Email"
 
+[name]
+other = "Nome"
+
 [subject]
 other = "Assunto"
 
