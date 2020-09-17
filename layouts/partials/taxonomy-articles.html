@@ -1,17 +1,16 @@
 <ul class="nav nav-tabs">
   {{ if isset .Params "featured" }}
-  <li class="nav-item border-0 border-bottom">
+  <li class="nav-item">
     <a class="nav-link active" href="#featured" data-toggle="tab">{{ i18n "featured" }}</a>
   </li>
   {{ end }}
-  <li class="nav-item {{ if not (isset .Params "featured") }}border-0 border-bottom{{ end }}">
-    <a class="nav-link" href="#latest" data-toggle="tab">{{ i18n "latest" }}</a>
+  <li class="nav-item">
+    <a class="nav-link {{ if not (isset .Params "featured") }}active{{ end }}" href="#latest" data-toggle="tab">{{ i18n "latest" }}</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#archive" data-toggle="tab">{{ i18n "archive" }}</a>
   </li>
 </ul>
-
 <div class="tab-content">
   {{ with .Params.featured }}
   <div role="featured" class="tab-pane fade show active" id="featured">
