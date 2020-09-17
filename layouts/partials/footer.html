@@ -1,7 +1,7 @@
 <footer class="site-footer mt-auto pt-5">
-  <div class="clearfix">
+  <div class="clearfix row">
     {{ with .Site.Params.Social }}
-    <div class="social-icons d-xl-inline-block align-top float-xl-left">
+    <div class="social-icons col-xl-4">
       <ul class="list-unstyled">
         {{ range . }}
         <li class="list-inline-item social-icon my-2">
@@ -13,9 +13,9 @@
     {{end}}
 
     {{ if or .Site.Menus.footer1 .Site.Menus.footer2 .Site.Menus.footer3 .Site.Menus.footer4 .Site.Menus.footer5 .Site.Menus.footer6 }}
-    <div class="footer-sections my-md-3 my-xl-0 d-xl-inline-block align-top float-xl-right">
+    <div class="footer-sections col-xl-8">
       {{ with .Site.Menus.footer1 }}
-      <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
+      <div class="my-3 my-md-0 mx-md-2 d-md-inline-block align-top">
         <ul class="list-unstyled">
           {{ range . }}
           <li>
@@ -31,7 +31,7 @@
       {{ end }}
 
       {{ with .Site.Menus.footer2 }}
-      <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
+      <div class="my-3 my-md-0 mx-md-2 d-md-inline-block align-top">
         <ul class="list-unstyled">
           {{ range . }}
           <li>
@@ -47,7 +47,7 @@
       {{ end }}
 
       {{ with .Site.Menus.footer3 }}
-      <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
+      <div class="my-3 my-md-0 mx-md-2 d-md-inline-block align-top">
         <ul class="list-unstyled">
           {{ range . }}
           <li>
@@ -63,7 +63,7 @@
       {{ end }}
 
       {{ with .Site.Menus.footer4 }}
-      <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
+      <div class="my-3 my-md-0 mx-md-2 d-md-inline-block align-top">
         <ul class="list-unstyled">
           {{ range . }}
           <li>
@@ -79,7 +79,7 @@
       {{ end }}
 
       {{ with .Site.Menus.footer5 }}
-      <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
+      <div class="my-3 my-md-0 mx-md-2 d-md-inline-block align-top">
         <ul class="list-unstyled">
           {{ range . }}
           <li>
@@ -95,7 +95,7 @@
       {{ end }}
 
       {{ with .Site.Menus.footer6 }}
-      <div class="my-3 my-md-0 mx-md-3 d-md-inline-block align-top">
+      <div class="my-3 my-md-0 mx-md-2 d-md-inline-block align-top">
         <ul class="list-unstyled">
           {{ range . }}
           <li>

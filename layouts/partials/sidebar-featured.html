@@ -7,8 +7,8 @@
       <li class="mb-2">
         <div class="row no-gutters">
           {{ if $.Site.Params.Sidebar.Featured.index }}
-          <div class="col-2 featured-index">
-            <span>{{ printf "%02d" (add $idx 1) }}</span>
+          <div class="col col-auto featured-index">
+            <span class="mr-2">{{ printf "%02d" (add $idx 1) }}</span>
           </div>
           {{ end }}
           <div class="{{ if $.Site.Params.Sidebar.Featured.index }}col-10{{ else }}col-12{{ end }}">
@@ -16,10 +16,12 @@
               <a href="{{ .Permalink }}" class="text-decoration-only-hover">{{ .Title }}</a>
             </h6>
             <p class="small mb-0">
-              {{ partial "home/meta-author-category.html" . }}
+              {{ partial "meta-author.html" . }}
+              {{ partial "meta-category.html" . }}
             </p>
             <p class="text-muted small mb-0">
-              {{ partial "home/meta-time-reading.html" . }}
+              {{ partial "meta-date.html" . }}
+              {{ partial "meta-reading-time.html" . }}
             </p>
           </div>
         </div>

@@ -72,3 +72,25 @@
     cursor: default;
   }
 }
+
+.nav-tabs {
+  .nav-link {
+    @extend .text-muted;
+    padding: 0.25rem 1rem;
+    font-size: 1.04rem;
+  }
+
+  .nav-link.active, .nav-link.active:hover {
+    @extend .text-dark;
+    border-bottom: 1px solid #757575;
+  }
+
+  .nav-link, .nav-link:hover {
+    border: 0;
+    border-radius: 0;
+  }
+
+  .nav-link:hover {
+    @extend .text-dark;
+  }
+}

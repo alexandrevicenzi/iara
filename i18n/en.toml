@@ -16,6 +16,12 @@ other = "in"
 [comments]
 other = "Comments"
 
+[latest]
+other = "Latest"
+
+[archive]
+other = "Archive"
+
 [articles]
 other = "Articles"
 

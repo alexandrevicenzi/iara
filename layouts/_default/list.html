@@ -1,8 +1,8 @@
 {{ define "main" -}}
-<section class="container taxonomy">
+<section class="container taxonomy mt-3 mb-5">
+  <h1>{{ .Title }}</h1>
   <ul class="list-unstyled mt-3 mb-5">
-    <h1>{{ .Title }}</h1>
-    {{ range .Data.Pages.ByTitle -}}
+  {{ range .Data.Pages.ByTitle -}}
     <li class="my-2">
       <div class="d-flex justify-content-between">
         <a href="{{ .Permalink }}" class="col-8 col-md-9 p-0 text-decoration-only-hover text-truncate">{{ .Title }}</a>
@@ -12,7 +12,7 @@
         {{ end }}
       </div>
     </li>
-    {{- end }}
+  {{- end }}
   </ul>
 </section>
 {{- end }}
