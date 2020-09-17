@@ -67,25 +67,25 @@
   <div class="d-none d-md-inline-block ml-auto">
     {{ if (and (ne .Params.DisableShare true) (ne .Params.disable_share true)) -}}
     <div class="d-inline-flex share-buttons text-center">
-      <a class="twitter-share-button"
+      <a class="share-button share-twitter"
          href="#"
          title="Share on Twitter"
          data-url="{{ .Permalink }}"
          data-text="{{ .Title }}"><i class="fab fa-twitter"></i></a>
 
-      <a class="linkedin-share-button"
+      <a class="share-button share-linkedin"
          href="#"
          title="Share on LinkedIn"
          data-url="{{ .Permalink }}"
          data-text="{{ .Title }}"><i class="fab fa-linkedin-in"></i></a>
 
-      <a class="facebook-share-button"
+      <a class="share-button share-facebook"
          href="#"
          title="Share on Facebook"
          data-url="{{ .Permalink }}"
          data-text="{{ .Title }}"><i class="fab fa-facebook"></i></a>
 
-      <a class="pinterest-share-button"
+      <a class="share-button share-pinterest"
          href="#"
          title="Share on Pinterest"
          data-url="{{ .Permalink }}"
