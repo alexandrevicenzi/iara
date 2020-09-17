@@ -4,7 +4,7 @@
   <ul class="list-unstyled">
     {{ range $idx, $item := .Item }}
       {{ with $.Site.GetPage $item.path }}
-      <li class="mb-2">
+      <li class="mb-3">
         <div class="row no-gutters">
           {{ if $.Site.Params.Sidebar.Featured.index }}
           <div class="col col-auto featured-index">
@@ -27,23 +27,7 @@
         </div>
       </li>
       {{ else }}
-      <li>
-        <div class="row no-gutters">
-          {{ if $.Site.Params.Sidebar.Featured.index }}
-          <div class="col-2 featured-index">
-            <span>{{ printf "%02d" (add $idx 1) }}</span>
-          </div>
-          {{ end }}
-          <div class="{{ if $.Site.Params.Sidebar.Featured.index }}col-10{{ else }}col-12{{ end }}">
-            <h6 class="mb-0">
-              <a href="{{ .Permalink }}" class="text-decoration-only-hover">Error: Page not found!</a>
-            </h6>
-            <p class="small mb-0">
-              {{ $item.path }}
-            </p>
-          </div>
-        </div>
-      </li>
+        {{ errorf "Featured page '%s' not found." $item.path }}
       {{ end }}
     {{ end }}
   </ul>
