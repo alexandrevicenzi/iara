@@ -86,3 +86,33 @@ pre,
 code {
   font-size: 1rem;
 }
+
+// Shortcodes
+
+/* Fix for gist shortcode */
+.gist {
+  table {
+    tr, td {
+      border: none !important;
+      background-color: #fff !important;
+    }
+  }
+
+  .my-2 {
+    margin: 0 !important;
+  }
+}
+
+.instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.twitter-tweet {
+  margin: 0 auto 1rem auto !important;
+}
+
+.youtube-video,
+.vimeo-video {
+  margin-bottom: 1rem;
+}
