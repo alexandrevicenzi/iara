@@ -1,5 +1,4 @@
 .site-footer {
-  text-align: center;
   background-color: $gray-800;
   color: $white;
   padding: 5rem 2rem 1rem 2rem;
@@ -46,5 +45,12 @@
     display: flex;
     flex: 1 1 100%;
     margin: 24px 0;
+  }
+
+  .social-icons,
+  .footer-sections,
+  .copyright,
+  .footer-sections ul {
+    text-align: center;
   }
 }

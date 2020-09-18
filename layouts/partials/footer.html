@@ -1,7 +1,7 @@
 <footer class="site-footer mt-auto pt-5">
-  <div class="clearfix row">
+  <div class="clearfix">
     {{ with .Site.Params.Social }}
-    <div class="social-icons col-xl-4">
+    <div class="social-icons d-xl-inline-block float-xl-left">
       <ul class="list-unstyled">
         {{ range . }}
         <li class="list-inline-item social-icon my-2">
@@ -13,7 +13,7 @@
     {{end}}
 
     {{ if or .Site.Menus.footer1 .Site.Menus.footer2 .Site.Menus.footer3 .Site.Menus.footer4 .Site.Menus.footer5 .Site.Menus.footer6 }}
-    <div class="footer-sections col-xl-8">
+    <div class="footer-sections d-xl-inline-block float-xl-right">
       {{ with .Site.Menus.footer1 }}
       <div class="my-3 my-md-0 mx-md-2 d-md-inline-block align-top">
         <ul class="list-unstyled">
