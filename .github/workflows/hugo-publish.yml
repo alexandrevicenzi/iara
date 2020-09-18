@@ -27,7 +27,7 @@ jobs:
         # Append "extended_" to the begining to use Hugo Extended.
         # hugoVersion: extended_0.58.3
         # Use if you want to pass some custom arguments to Hugo.
-        args: --gc --cleanDestinationDir -b "https://iara.alxd.me/" -t iara
+        args: --gc --cleanDestinationDir -b https://iara.alxd.me/ -t iara
         # Use this if your site isn't in the root of your repo.
         # The root of your repo can be found at /github/workspace
         siteDir: /github/workspace/exampleSite/
