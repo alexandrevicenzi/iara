@@ -1,5 +1,8 @@
+{{- $sidebarOnRight := ne .Site.Params.sidebar.location "left" -}}
 {{ with .Site.Params.Author }}
+{{ if $sidebarOnRight }}
 <hr class="d-lg-none mb-5">
+{{ end }}
 <div class="author text-center mt-4 mb-5">
   <img src="{{ .image }}"
        class="rounded-circle"

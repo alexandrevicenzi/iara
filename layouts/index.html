@@ -12,8 +12,9 @@
         {{ template "_internal/pagination.html" . }}
       </div>
     </section>
-    <div class="col-lg-4">
-      <aside class="sidebar mx-3 mt-lg-5 ml-lg-5">
+    {{- $sidebarOnLeft := eq .Site.Params.sidebar.location "left" -}}
+    <div class="col-lg-4 {{ if $sidebarOnLeft }}order-first{{ end }}">
+      <aside class="sidebar mx-3 mt-lg-5 {{ if $sidebarOnLeft }}mr-lg-5{{ else }}ml-lg-5{{ end }}">
         {{ partial "sidebar-author.html" . }}
 
         {{ partial "sidebar-featured.html" . }}
