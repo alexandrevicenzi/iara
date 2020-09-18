@@ -94,3 +94,9 @@
     @extend .text-dark;
   }
 }
+
+@media (max-width: 991px) {
+  .nav-item .dropdown-menu {
+    border: none;
+  }
+}
