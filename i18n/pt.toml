@@ -55,3 +55,9 @@ other = "Mensagem"
 
 [submit]
 other = "Enviar"
+
+[page-not-found]
+other = "Hmmmm.... Parece que a página que você está buscando não existe"
+
+[go-back-home]
+other = "Ir para Início"

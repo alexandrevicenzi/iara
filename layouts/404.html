@@ -1,7 +1,7 @@
 {{ define "main" -}}
 <div class="container mt-5 text-center">
   <h1>404</h1>
-  <p>It seems like we couldn't find the page you were looking for.</p>
-  <a href="{{ .Site.BaseURL }}" class="btn btn-success">Go back Home</a>
+  <p>{{ i18n "page-not-found" . }}</p>
+  <a href="{{ .Site.BaseURL }}" class="btn btn-success">{{ i18n "go-back-home" . }}</a>
 </div>
 {{- end }}
