@@ -11,6 +11,9 @@ other = "Destaque"
 other = "Escrito por"
 
 [postedIn]
+other = "Publicado em"
+
+[postedInShort]
 other = "em"
 
 [comments]

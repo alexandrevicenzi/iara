@@ -19,7 +19,7 @@
   </div>
   {{- end -}}
   <div class="d-inline-block authors">
-    <div class="text-muted">
+    <div>
     {{- if isset $.Params "authors" -}}
       <span>
       {{- $len := len $.Params.authors -}}
@@ -32,17 +32,14 @@
       {{- end -}}
       {{- end -}}
       </span>
-    {{- else -}}
-    {{- if isset $.Params "author" -}}
-      {{- if isset .Site.Data "_authors" -}}
-      {{- $author := index .Site.Data._authors $.Params.author -}}
-      <span>{{ $author.name }}</span>
-      {{- else -}}
+    {{- else if isset $.Params "author" -}}
       <span>{{ $.Params.author }}</span>
-    {{- end -}}
-    {{- end -}}
     {{- end }}
-    <span>{{ i18n "postedIn" }}</span>
+    {{ if or (isset $.Params "authors") (isset $.Params "author") }}
+    <span class="text-muted">{{ i18n "postedInShort" }}</span>
+    {{ else }}
+    <span class="text-muted">{{ i18n "postedIn" }}</span>
+    {{ end }}
     <span>
     {{- if isset $.Params "categories" -}}
     {{ $len := len $.Params.categories -}}

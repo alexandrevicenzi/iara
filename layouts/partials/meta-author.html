@@ -9,13 +9,6 @@
   {{- end -}}
 {{- end -}}
 </span>
-{{- else -}}
-{{- if isset $.Params "author" -}}
-  {{- if isset .Site.Data "_authors" -}}
-  {{- $author := index .Site.Data._authors $.Params.author -}}
-  <span>{{ $author.name }}</span>
-  {{- else -}}
+{{- else if isset $.Params "author" -}}
   <span>{{ $.Params.author }}</span>
-{{- end -}}
-{{- end -}}
 {{- end }}

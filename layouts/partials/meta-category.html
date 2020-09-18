@@ -1,4 +1,8 @@
+{{- if or (isset $.Params "authors") (isset $.Params "author") -}}
+<span class="text-muted">{{ i18n "postedInShort" }}</span>
+{{ else }}
 <span class="text-muted">{{ i18n "postedIn" }}</span>
+{{ end }}
 <span>
 {{- if isset $.Params "categories" -}}
 {{ $len := len $.Params.categories -}}

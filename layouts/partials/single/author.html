@@ -26,28 +26,9 @@
   {{- end -}}
   {{- end }}
 </div>
-{{- else -}}
-{{- if isset .Params "author" -}}
-  {{- if isset $.Site.Data "_authors" -}}
-  {{- $author := index $.Site.Data._authors .Params.author }}
-  <div class="border-top pt-4 pb-5">
-    <div class="author-avatar d-inline-block position-absolute mt-2">
-      <img class="author-img"
-           src="{{ with $author.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ $author.gravatar | md5 }}?s=100&d=robohash{{ end }}"
-           loading="lazy"
-           alt="{{ $author.name }}">
-    </div>
-    <div class="author-meta d-inline-block align-top">
-      <span class="text-muted text-uppercase small">{{ i18n "writtenBy" }}</span>
-      <h2 class="m-0">{{ $author.name }}</h2>
-      <span class="text-muted">{{ $author.bio }}</span>
-    </div>
-  </div>
-  {{ else }}
+{{- else if isset .Params "author" -}}
   <div class="border-top pt-4 pb-5">
     <span class="text-muted text-uppercase small">{{ i18n "writtenBy" }}</span>
     <h2 class="m-0">{{ $.Params.author }}</h2>
   </div>
-  {{ end -}}
-{{- end -}}
 {{- end -}}

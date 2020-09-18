@@ -11,6 +11,9 @@ other = "Featured"
 other = "Written By"
 
 [postedIn]
+other = "Posted in"
+
+[postedInShort]
 other = "in"
 
 [comments]
