@@ -1,8 +1,6 @@
 # Iara
 
-Iara is a clean and minimalist, yet feature rich, Medium-like theme for Hugo.
-
-Iara is built with Bootstrap 4 and FontAwesome.
+Feature rich Medium-like theme for Hugo.
 
 ## Features
 
@@ -17,6 +15,8 @@ Iara is built with Bootstrap 4 and FontAwesome.
 - Author Taxonomy
 - Internationalization (i18n)
 - TeX support
+- Lazy load images
+- Syntax highlighting
 - Customizable
 
 ## Integrations
@@ -37,16 +37,23 @@ Iara is built with Bootstrap 4 and FontAwesome.
 
 ## Installation
 
-To install Iara as your default theme, first install this repository in the `themes/` directory:
+Install Iara by cloning the repository into your Hugo project:
 
-    $ cd themes/
-    $ git clone https://github.com/alexandrevicenzi/iara.git
+```sh
+git clone https://github.com/alexandrevicenzi/iara.git themes/iara
+```
 
-Second, specify `iara` as your default theme in the `config.toml` file. Just add the line
+or clone using submodules (recommended):
 
-    theme = "iara"
+```sh
+git submodule add https://github.com/alexandrevicenzi/iara.git themes/iara
+```
 
-at the top of the file.
+After cloning, specify `iara` as your default theme in `config.toml` file by adding:
+
+```toml
+theme = "iara"
+```
 
 ## License
 

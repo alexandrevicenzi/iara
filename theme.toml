@@ -1,9 +1,9 @@
 name = "Iara"
-license = "MIT"
+license = "Apache License 2.0"
 licenselink = "https://github.com/alexandrevicenzi/iara/blob/master/LICENSE.md"
-description = "Clean and minimalist Medium-like theme for Hugo"
-tags = ["blog", "responsive", "clean", "minimalist"]
-features = ["blog", "seo", "responsive", "mobile", "disqus", "analytics"]
+description = "Feature rich Medium-like theme for Hugo."
+tags = ["blog", "responsive", "mobile", "search", "disqus", "google-analytics", "contact-form", "multilingual"]
+features = ["blog", "responsive", "shortcodes", "seo", "authors"]
 min_version = "0.65.0"
 
 [author]
