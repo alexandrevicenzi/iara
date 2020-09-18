@@ -1,24 +1,39 @@
 # Iara
 
-Iara is a clean and minimalist Medium-like theme for Hugo.
+Iara is a clean and minimalist, yet feature rich, Medium-like theme for Hugo.
+
+Iara is built with Bootstrap 4 and FontAwesome.
 
 ## Features
 
 - Mobile First
 - Responsive
 - Semantic
-- SEO Best Practices
-- Open Graph
-- Rich Snippets (JSON-LD)
-- Twitter Card
+- SEO best practices
+  - Open Graph
+  - Schema.org (Microdata)
+  - Twitter Card
 - Pagination
+- Author Taxonomy
+- Internationalization (i18n)
+- TeX support
 - Customizable
-- Support all [Hugo Internals](https://gohugo.io/templates/internal/)
 
 ## Integrations
 
-- [Disqus](https://disqus.com/)
-- [Google Analytics](https://www.google.com/analytics/web/)
+- AddThis
+- Disqus
+- Google Analytics
+- Google AdSense
+- Google Custom Search
+- TeX (with KaTeX or MathJax)
+
+## Shortcodes
+
+- [Hugo built-ins](https://gohugo.io/content-management/shortcodes/)
+- Contact Form (good for [FormSpark](https://formspark.io/))
+- Alerts
+- Buttons
 
 ## Installation
 
@@ -35,4 +50,4 @@ at the top of the file.
 
 ## License
 
-MIT
+Apache License 2.0
