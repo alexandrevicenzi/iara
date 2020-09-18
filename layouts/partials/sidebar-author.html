@@ -1,0 +1,11 @@
+{{ with .Site.Params.Author }}
+<hr class="d-lg-none mb-5">
+<div class="author text-center mt-4 mb-5">
+  <img src="{{ .image }}"
+       class="rounded-circle"
+       width="160"
+       height="160">
+  <h4 class="my-2">{{ .name }}</h4>
+  <span class="small">{{ .bio }}</span>
+</div>
+{{ end }}

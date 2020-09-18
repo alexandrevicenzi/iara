@@ -13,7 +13,17 @@
       </div>
     </section>
     <div class="col-lg-4">
-      {{ partial "sidebar.html" . }}
+      <aside class="sidebar mx-3 mt-lg-5 ml-lg-5">
+        {{ partial "sidebar-author.html" . }}
+
+        {{ partial "sidebar-featured.html" . }}
+
+        {{ partial "custom/sidebar.html" . }}
+
+        {{ partial "sidebar-categories.html" . }}
+
+        {{ partial "sidebar-tags.html" . }}
+      </aside>
     </div>
   </div>
 </div>
