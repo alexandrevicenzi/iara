@@ -1,4 +1,7 @@
-<footer class="site-footer mt-auto pt-5">
+{{ $hasMenus := or .Site.Menus.footer1 .Site.Menus.footer2 .Site.Menus.footer3 .Site.Menus.footer4 .Site.Menus.footer5 .Site.Menus.footer6 }}
+{{ $hasSocial := isset .Site.Params "social" }}
+<footer class="site-footer mt-auto pt-5 pb-3 px-4">
+  {{ if or $hasSocial $hasMenus }}
   <div class="clearfix text-center">
     {{ with .Site.Params.Social }}
     <div class="social-icons d-xl-inline-block float-xl-left">
@@ -12,7 +15,7 @@
     </div>
     {{end}}
 
-    {{ if or .Site.Menus.footer1 .Site.Menus.footer2 .Site.Menus.footer3 .Site.Menus.footer4 .Site.Menus.footer5 .Site.Menus.footer6 }}
+    {{ if $hasMenus }}
     <div class="footer-sections d-xl-inline-block float-xl-right">
       {{ with .Site.Menus.footer1 }}
       <div class="my-3 my-md-0 mx-md-2 d-md-inline-block align-top">
@@ -112,6 +115,8 @@
     </div>
     {{ end }}
   </div>
+  <hr class="my-3">
+  {{ end }}
 
   <div class="copyright clearfix text-center">
     <div class="d-md-inline-block float-md-left">
@@ -127,7 +132,7 @@
     </div>
     {{ with .Site.Menus.terms }}
     <div class="d-md-inline-block float-md-right">
-        <ul class="list-unstyled">
+        <ul class="list-unstyled m-0">
           {{ range . }}
           <li class="list-inline-item">
             <a href="{{ .URL }}">

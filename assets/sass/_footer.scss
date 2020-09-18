@@ -1,7 +1,6 @@
 .site-footer {
   background-color: $gray-800;
   color: $white;
-  padding: 5rem 2rem 1rem 2rem;
 
   a {
     color: $white;
@@ -37,13 +36,7 @@
     height: 100%;
   }
 
-  .copyright:before {
-    border-bottom: 1px solid $gray-700;
-    content: "";
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 100%;
-    display: flex;
-    flex: 1 1 100%;
-    margin: 24px 0;
+  hr {
+    border-top: 1px solid $gray-700;
   }
 }
