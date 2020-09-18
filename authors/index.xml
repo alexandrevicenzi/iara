@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Iara Theme</title>
+    <link>https://iara.alxd.me/authors/</link>
+    <description>Recent content in Authors on Iara Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iara.alxd.me/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Iara Authors</title>
+      <link>https://iara.alxd.me/authors/iara/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/authors/iara/</guid>
+      <description>Check it out! These are my articles. </description>
+    </item>
+    
+    <item>
+      <title>Hugo Authors</title>
+      <link>https://iara.alxd.me/authors/hugo/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/authors/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nikola Tesla</title>
+      <link>https://iara.alxd.me/authors/tesla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/authors/tesla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tomas Edison</title>
+      <link>https://iara.alxd.me/authors/edison/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/authors/edison/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>search on Iara Theme</title>
+    <link>https://iara.alxd.me/tags/search/</link>
+    <description>Recent content in search on Iara Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 05 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iara.alxd.me/tags/search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Custom Search</title>
+      <link>https://iara.alxd.me/post/google-search/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/google-search/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s possible to use &lt;a href=&#34;https://cse.google.com/cse/all&#34;&gt;Google Search&lt;/a&gt; in this theme, all you need to do is set it in paramenters.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>images on Iara Theme</title>
+    <link>https://iara.alxd.me/tags/images/</link>
+    <description>Recent content in images on Iara Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iara.alxd.me/tags/images/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cover image example</title>
+      <link>https://iara.alxd.me/post/cover/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/cover/</guid>
+      <description>&lt;p&gt;Covers are displayed before article title in full page width. Use a large image, 1200px width at least.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Thumbnail image example</title>
+      <link>https://iara.alxd.me/post/thumbnail/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/thumbnail/</guid>
+      <description>&lt;p&gt;Thumbnails are used in the Home page.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SEO image example</title>
+      <link>https://iara.alxd.me/post/seo-image-example/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/seo-image-example/</guid>
+      <description>&lt;p&gt;You can also define images for SEO, some social networks require square images.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

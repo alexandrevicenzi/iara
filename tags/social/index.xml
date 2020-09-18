@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>social on Iara Theme</title>
+    <link>https://iara.alxd.me/tags/social/</link>
+    <description>Recent content in social on Iara Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iara.alxd.me/tags/social/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AddThis: Engage with your audience</title>
+      <link>https://iara.alxd.me/post/add-this/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/add-this/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s possible to use &lt;a href=&#34;https://www.addthis.com/&#34;&gt;AddThis&lt;/a&gt; in this theme, all you need to do is set it in paramenters.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Social icons on footer</title>
+      <link>https://iara.alxd.me/post/social-footer/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/social-footer/</guid>
+      <description>&lt;p&gt;Connect with your users, display your social network.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

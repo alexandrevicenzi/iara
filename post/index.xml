@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Iara Theme</title>
+    <link>https://iara.alxd.me/post/</link>
+    <description>Recent content in Posts on Iara Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://iara.alxd.me/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cover image example</title>
+      <link>https://iara.alxd.me/post/cover/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/cover/</guid>
+      <description>&lt;p&gt;Covers are displayed before article title in full page width. Use a large image, 1200px width at least.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>KaTeX support</title>
+      <link>https://iara.alxd.me/post/katex-support/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/katex-support/</guid>
+      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Custom Search</title>
+      <link>https://iara.alxd.me/post/google-search/</link>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/google-search/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s possible to use &lt;a href=&#34;https://cse.google.com/cse/all&#34;&gt;Google Search&lt;/a&gt; in this theme, all you need to do is set it in paramenters.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Date format</title>
+      <link>https://iara.alxd.me/post/date-format/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/date-format/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s possible to change the date format used in this theme, all you need to do is set it in paramenters.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AddThis: Engage with your audience</title>
+      <link>https://iara.alxd.me/post/add-this/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/add-this/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s possible to use &lt;a href=&#34;https://www.addthis.com/&#34;&gt;AddThis&lt;/a&gt; in this theme, all you need to do is set it in paramenters.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Google Ads</title>
+      <link>https://iara.alxd.me/post/google-ads/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/google-ads/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s possible to use &lt;a href=&#34;https://www.google.com/adsense/start/&#34;&gt;Google Ads&lt;/a&gt; in this theme, all you need to do is set it in paramenters.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MathJax support</title>
+      <link>https://iara.alxd.me/post/mathjax-support/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/mathjax-support/</guid>
+      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Social icons on footer</title>
+      <link>https://iara.alxd.me/post/social-footer/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/social-footer/</guid>
+      <description>&lt;p&gt;Connect with your users, display your social network.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Theme menus</title>
+      <link>https://iara.alxd.me/post/menus/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/menus/</guid>
+      <description>Menus help users navigate on you site</description>
+    </item>
+    
+    <item>
+      <title>Thumbnail image example</title>
+      <link>https://iara.alxd.me/post/thumbnail/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/thumbnail/</guid>
+      <description>&lt;p&gt;Thumbnails are used in the Home page.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SEO image example</title>
+      <link>https://iara.alxd.me/post/seo-image-example/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/seo-image-example/</guid>
+      <description>&lt;p&gt;You can also define images for SEO, some social networks require square images.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Alert shortcode</title>
+      <link>https://iara.alxd.me/post/alert-shortcode/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/alert-shortcode/</guid>
+      <description>Learn how to use built in alert shortcode in this theme</description>
+    </item>
+    
+    <item>
+      <title>Button shortcode</title>
+      <link>https://iara.alxd.me/post/buttons-shortcode/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/buttons-shortcode/</guid>
+      <description>Learn how to use built in button shortcode in this theme</description>
+    </item>
+    
+    <item>
+      <title>Contact form shortcode</title>
+      <link>https://iara.alxd.me/post/contact-form-shortcode/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/contact-form-shortcode/</guid>
+      <description>Learn how to use built in contact form shortcode in this theme</description>
+    </item>
+    
+    <item>
+      <title>Figure shortcode</title>
+      <link>https://iara.alxd.me/post/figure-shortcode/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/figure-shortcode/</guid>
+      <description>&lt;p&gt;You can use &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/&#34;&gt;Shortcodes&lt;/a&gt; to display images in any part of your article.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>https://iara.alxd.me/post/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/markdown-syntax/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>https://iara.alxd.me/post/rich-content/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/rich-content/</guid>
+      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Placeholder Text</title>
+      <link>https://iara.alxd.me/post/placeholder-text/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/placeholder-text/</guid>
+      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Math Typesetting</title>
+      <link>https://iara.alxd.me/post/math-typesetting/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/math-typesetting/</guid>
+      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Emoji Support</title>
+      <link>https://iara.alxd.me/post/emoji-support/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://iara.alxd.me/post/emoji-support/</guid>
+      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
