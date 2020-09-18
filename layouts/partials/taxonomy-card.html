@@ -1,12 +1,7 @@
 <div class="card border-0 mt-4">
   <div class="row no-gutters">
-    <div class="col-3 m-auto">
-      <a href="{{ .Permalink }}">
-        {{ partial "meta-thumbnail.html" . }}
-      </a>
-    </div>
     <div class="col-9">
-      <div class="card-body py-0">
+      <div class="card-body pl-0 py-0">
         <h5 class="card-title">
           <a href="{{ .Permalink }}" class="text-decoration-only-hover">{{ .Title }}</a>
         </h5>
@@ -21,6 +16,11 @@
           {{ partial "meta-reading-time.html" . }}
         </p>
       </div>
+    </div>
+    <div class="col-3 m-auto">
+      <a href="{{ .Permalink }}">
+        {{ partial "meta-thumbnail.html" . }}
+      </a>
     </div>
   </div>
 </div>
