@@ -9,7 +9,7 @@
         <img class="author-img"
              src="{{ with .Params.avatar }}{{ . | absURL }}{{ else }}https://www.gravatar.com/avatar/{{ .Params.gravatar | md5 }}?s=100&d=robohash{{ end }}"
              loading="lazy"
-             alt="{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}">
+             alt="{{ .Title }}">
       </a>
     </div>
     <div class="author-meta d-inline-block align-top">
@@ -17,7 +17,7 @@
       <span class="small text-muted text-uppercase">{{ i18n "writtenBy" }}</span>
       {{ end }}
       <h2 {{ if eq $idx 0 }}class="m-0"{{ end }}>
-        <a href="{{ .Permalink }}">{{ with .Params.title }}{{ . }}{{ else }}{{ .Params.name }}{{ end }}</a>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
       </h2>
       <span class="small text-muted">{{ .Params.bio }}</span>
     </div>
