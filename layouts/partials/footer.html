@@ -124,14 +124,9 @@
       {{ with .Site.Params.License }}
       &middot; <a href="{{ .url }}" target="_blank">{{ .name | safeHTML }}</a>
       {{end}}
-      {{ with .Site.Params.BuiltWith }}
-      <span class="d-none d-md-inline-block">
-      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/iara/" target="_blank">Iara</a>
-      </span>
-      {{end}}
     </div>
     {{ with .Site.Menus.terms }}
-    <div class="d-md-inline-block float-md-right">
+    <div class="pt-2 pt-md-0 d-md-inline-block float-md-right">
         <ul class="list-unstyled m-0">
           {{ range . }}
           <li class="list-inline-item">
@@ -145,5 +140,12 @@
         </ul>
     </div>
     {{ end }}
+    {{ with .Site.Params.BuiltWith }}
+    <div class="pt-2 pt-md-0 d-md-inline-block float-md-none">
+      <span>
+      Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://themes.gohugo.io/iara/" target="_blank">Iara Theme</a>
+      </span>
+    </div>
+    {{end}}
   </div>
 </footer>
