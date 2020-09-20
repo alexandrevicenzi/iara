@@ -1,9 +1,10 @@
 {{ define "main" -}}
+{{- $showSidebar := ne .Site.Params.sidebar.show false -}}
 <div class="container">
   <div class="row no-gutters mb-5">
     {{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.MainSections -}}
     {{- $paginator := .Paginate $pages -}}
-    <section class="col-lg-8">
+    <section class="{{ if $showSidebar }}col-lg-8{{ else }}offset-lg-1 col-lg-10{{ end }}">
       {{- range $paginator.Pages }}
       {{ partial "home-card.html" . }}
       {{- end }}
@@ -12,6 +13,7 @@
         {{ template "_internal/pagination.html" . }}
       </div>
     </section>
+    {{ if $showSidebar }}
     {{- $sidebarOnLeft := eq .Site.Params.sidebar.location "left" -}}
     <div class="col-lg-4 {{ if $sidebarOnLeft }}order-first{{ end }}">
       <aside class="sidebar mx-3 mt-lg-5 {{ if $sidebarOnLeft }}mr-lg-5{{ else }}ml-lg-5{{ end }}">
@@ -26,6 +28,7 @@
         {{ partial "sidebar-tags.html" . }}
       </aside>
     </div>
+    {{ end }}
   </div>
 </div>
 {{- end }}
