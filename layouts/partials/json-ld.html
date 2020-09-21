@@ -52,13 +52,6 @@
       },
       {{- end }}
       {{- end }}
-      "potentialAction": [
-         {
-            "@type": "SearchAction",
-            "target": "https://www.butecotecnologico.com.br/?s={search_term_string}",
-            "query-input": "required name=search_term_string"
-         }
-      ],
       "inLanguage": {{ .Site.LanguageCode }}
     },
     {{- with .Site.Params.logo }}
