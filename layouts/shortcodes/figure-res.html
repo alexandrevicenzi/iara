@@ -1,0 +1,58 @@
+{{- $class := .Get "class" -}}
+{{- $link := .Get "link" -}}
+{{- $linkTarget := .Get "target" -}}
+{{- $linkRel := .Get "rel" -}}
+{{- $name := (.Get "name") | default (.Get "src") -}}
+{{- $res := .Page.Resources.GetMatch $name -}}
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+{{- $attr := .Get "attr" -}}
+{{- $attrlink := .Get "attrlink" -}}
+{{- $caption := .Get "caption" -}}
+{{- $alt := .Get "alt" -}}
+{{- $title := .Get "title" -}}
+{{- $bg := (.Get "bg") | default "#fff" -}}
+{{- $quality := (.Get "quality") | default "90" -}}
+{{- $filter := (.Get "filter") | default "Linear" -}}
+{{- define "__figure_resize" -}}
+{{- $im := .image.Resize (printf "%s jpg q%s %s %s" .size .quality .filter .bg) -}}
+{{- $im.Permalink -}}
+{{- end -}}
+{{- define "__figure_fit" -}}
+{{- $im := .image.Fit (printf "%s jpg q%s %s %s" .size .quality .filter .bg) -}}
+{{- $im.Permalink -}}
+{{- end -}}
+<figure {{ with $class }}class="{{ . }}"{{ end }}>
+  {{- if $link -}}
+  <a href="{{ $link }}" {{ with $linkTarget }}target="{{ . }}"{{ end }} {{ with $linkRel }}rel="{{ . }}"{{ end }}>
+  {{- end }}
+  <img loading="lazy"
+    {{- if (and $width $height) }}
+      src="{{ template "__figure_fit" (dict "image" $res "quality" $quality "filter" $filter "bg" $bg "size" (printf "%sx%s" $width $height)) }}"
+    {{- else if $width }}
+      src="{{ template "__figure_resize" (dict "image" $res "quality" $quality "filter" $filter "bg" $bg "size" (printf "%sx" $width)) }}"
+    {{- else if $height }}
+      src="{{ template "__figure_resize" (dict "image" $res "quality" $quality "filter" $filter "bg" $bg "size" (printf "x%s" $height)) }}"
+    {{- else }}
+      src="{{ $res.Permalink }}"
+    {{- end -}}
+    {{- if or ($alt) ($caption) }}
+       alt="{{ with $alt }}{{ . }}{{ else }}{{ $caption | markdownify | plainify }}{{ end }}"
+    {{- end -}}
+  />
+  {{- if $link -}}
+  </a>
+  {{- end -}}
+  {{- if or (or $title $caption) ($attr) -}}
+  <figcaption>
+    {{ with $title }}
+    <h4>{{ . }}</h4>
+    {{- end -}}
+    {{- if or $caption $attr }}
+    <p>
+      {{ $caption | markdownify }}{{ with $attrlink }} <a href="{{ . }}">{{ end }}{{ $attr | markdownify }}{{ if $attrlink }}</a>{{ end }}
+    </p>
+    {{- end }}
+  </figcaption>
+  {{- end }}
+</figure>
