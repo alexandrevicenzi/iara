@@ -1,6 +1,7 @@
 {{- $images := .Resources.ByType "image" -}}
 {{- with $images.GetMatch "{*thumbnail*,*cover*,*feature*,*header*}" -}}
-<img style="max-width: 150px; max-height: 150px;" src="{{ .Permalink }}" loading="lazy" class="card-img" alt="{{ $.Title }}">
+{{ $image := .Fit "150x150 jpg q100 Lanczos" }}
+<img src="{{ $image.Permalink }}" loading="lazy" class="card-img" alt="{{ $image.Title }}">
 {{- else -}}
 {{- with .Params.thumbnail -}}
 <img style="max-width: 150px; max-height: 150px;" src="{{ .image | absURL }}" loading="lazy" class="card-img" alt="{{ with .alt }}{{ . }}{{ else }}{{ $.Title }}{{ end }}">
