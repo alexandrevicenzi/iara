@@ -7,23 +7,35 @@
 
   {{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
-  {{- else -}}
+  {{ else }}
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   {{ end }}
 
-  {{- partial "seo.html" . -}}
+  {{- partial "preconnect.html" . -}}
 
-  {{- partial "styles.html" . -}}
+  {{- partial "styles/fonts.html" . -}}
 
-  {{- partial "icons.html" . -}}
+  {{- partial "styles/bootstrap.html" . -}}
 
-  {{- partial "custom/head.html" . -}}
+  {{- partial "styles/fontawesome.html" . -}}
 
-  {{- partial "rss.html" . -}}
+  {{- partial "custom/icons.html" . -}}
 
-  {{- partial "head.html" . -}}
+  {{- partial "custom/styles.html" . -}}
 
-  {{- partial "tex.html" . -}}
+  {{- partial "seo/schema.html" . -}}
+
+  {{- partial "seo/opengraph.html" . -}}
+
+  {{- partial "seo/twitter.html" . -}}
+
+  {{- partial "seo/json-ld.html" . -}}
+
+  {{- partial "alternative-output.html" . -}}
+
+  {{- partial "scripts/tex.html" . -}}
+
+  {{- partial "scripts/ads.html" . -}}
 </head>
 <body class="d-flex flex-column h-100">
   {{ partial "nav.html" . }}
@@ -36,8 +48,16 @@
 
   {{- partial "footer.html" . -}}
 
-  {{- partial "custom/footer.html" . -}}
+  {{- partial "scripts/jquery.html" . -}}
 
-  {{- partial "scripts.html" . -}}
+  {{- partial "scripts/bootstrap.html" . -}}
+
+  {{- partial "custom/scripts.html" . -}}
+
+  {{- partial "scripts/fontawesome.html" . -}}
+
+  {{- partial "scripts/analytics.html" . -}}
+
+  {{- partial "scripts/addthis.html" . -}}
 </body>
 </html>
