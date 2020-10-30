@@ -11,33 +11,28 @@
 {{- $caption := .Get "caption" -}}
 {{- $alt := .Get "alt" -}}
 {{- $title := .Get "title" -}}
-{{- $bg := (.Get "bg") | default "#fff" -}}
-{{- $quality := (.Get "quality") | default "90" -}}
-{{- $filter := (.Get "filter") | default "Linear" -}}
-{{- define "__figure_resize" -}}
-{{- $im := .image.Resize (printf "%s jpg q%s %s %s" .size .quality .filter .bg) -}}
-{{- $im.Permalink -}}
+{{- $bg := (.Get "bg") | default "" -}}
+{{- $quality := (.Get "quality") -}}
+{{- if $quality -}}
+{{- $quality = printf "q%s" $quality -}}
 {{- end -}}
-{{- define "__figure_fit" -}}
-{{- $im := .image.Fit (printf "%s jpg q%s %s %s" .size .quality .filter .bg) -}}
-{{- $im.Permalink -}}
-{{- end -}}
+{{- $filter := (.Get "filter") | default "" -}}
 <figure {{ with $class }}class="{{ . }}"{{ end }}>
   {{- if $link -}}
   <a href="{{ $link }}" {{ with $linkTarget }}target="{{ . }}"{{ end }} {{ with $linkRel }}rel="{{ . }}"{{ end }}>
   {{- end }}
   <img loading="lazy"
     {{- if (and $width $height) }}
-      src="{{ template "__figure_fit" (dict "image" $res "quality" $quality "filter" $filter "bg" $bg "size" (printf "%sx%s" $width $height)) }}"
+      src="{{ template "__figure_fit" (dict "im" $res "q" $quality "f" $filter "bg" $bg "size" (printf "%sx%s" $width $height)) }}"
     {{- else if $width }}
-      src="{{ template "__figure_resize" (dict "image" $res "quality" $quality "filter" $filter "bg" $bg "size" (printf "%sx" $width)) }}"
+      src="{{ template "__figure_resize" (dict "im" $res "q" $quality "f" $filter "bg" $bg "size" (printf "%sx" $width)) }}"
     {{- else if $height }}
-      src="{{ template "__figure_resize" (dict "image" $res "quality" $quality "filter" $filter "bg" $bg "size" (printf "x%s" $height)) }}"
+      src="{{ template "__figure_resize" (dict "im" $res "q" $quality "f" $filter "bg" $bg "size" (printf "x%s" $height)) }}"
     {{- else }}
-      src="{{ $res.Permalink }}"
+      src="{{ template "__figure_resize" (dict "im" $res "q" $quality "f" $filter "bg" $bg "size" (printf "%dx%d" $res.Width $res.Height)) }}"
     {{- end -}}
     {{- if or ($alt) ($caption) }}
-       alt="{{ with $alt }}{{ . }}{{ else }}{{ $caption | markdownify | plainify }}{{ end }}"
+      alt="{{ with $alt }}{{ . }}{{ else }}{{ $caption | markdownify | plainify }}{{ end }}"
     {{- end -}}
   />
   {{- if $link -}}

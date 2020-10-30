@@ -17,7 +17,15 @@
   {{- end }}
   <img loading="lazy"
     {{- with $res }}
-      src="{{ .Permalink }}"
+      {{- if (and $width $height) }}
+      src="{{ template "__figure_fit" (dict "im" $res "q" "" "f" "" "bg" "" "size" (printf "%sx%s" $width $height)) }}"
+      {{- else if $width }}
+      src="{{ template "__figure_resize" (dict "im" $res "q" "" "f" "" "bg" "" "size" (printf "%sx" $width)) }}"
+      {{- else if $height }}
+      src="{{ template "__figure_resize" (dict "im" $res "q" "" "f" "" "bg" "" "size" (printf "x%s" $height)) }}"
+      {{- else }}
+      src="{{ template "__figure_resize" (dict "im" $res "q" "" "f" "" "bg" "" "size" (printf "%dx%d" $res.Width $res.Height)) }}"
+      {{- end -}}
     {{- else  }}
       src="{{ $src }}"
     {{- end -}}
