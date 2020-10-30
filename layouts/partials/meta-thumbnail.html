@@ -1,6 +1,6 @@
 {{- $images := .Resources.ByType "image" -}}
 {{- with $images.GetMatch "{*thumbnail*,*cover*,*feature*,*header*}" -}}
-{{- $image := .Fit "150x150 jpg q100 Linear" -}}
+{{- $image := .Fit "150x150 jpg q90 Linear" -}}
 <img src="{{ $image.Permalink }}" loading="lazy" class="card-img" alt="{{ $image.Title }}">
 {{- else -}}
 {{- with .Params.thumbnail -}}
