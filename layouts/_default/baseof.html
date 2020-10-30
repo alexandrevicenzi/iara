@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{ hugo.Generator }}
 
-  {{ if .IsHome -}}
+  {{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
   {{- else -}}
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-  {{- end }}
+  {{ end }}
 
-  {{ partial "seo.html" . }}
+  {{- partial "seo.html" . -}}
 
-  {{ partial "styles.html" . }}
+  {{- partial "styles.html" . -}}
 
-  {{ partial "icons.html" . }}
+  {{- partial "icons.html" . -}}
 
-  {{ partial "custom/head.html" . }}
+  {{- partial "custom/head.html" . -}}
 
-  {{ partial "rss.html" . }}
+  {{- partial "rss.html" . -}}
 
-  {{ partial "head.html" . }}
+  {{- partial "head.html" . -}}
 
-  {{ partial "tex.html" . }}
+  {{- partial "tex.html" . -}}
 </head>
 <body class="d-flex flex-column h-100">
   {{ partial "nav.html" . }}
@@ -32,12 +32,12 @@
   {{ block "main" . -}}{{- end }}
   </main>
 
-  {{ partial "search-modal.html" . }}
+  {{- partial "search-modal.html" . -}}
 
-  {{ partial "footer.html" . }}
+  {{- partial "footer.html" . -}}
 
-  {{ partial "custom/footer.html" . }}
+  {{- partial "custom/footer.html" . -}}
 
-  {{ partial "scripts.html" . }}
+  {{- partial "scripts.html" . -}}
 </body>
 </html>

@@ -1,16 +1,16 @@
-{{ with .Site.Params.Sidebar.Featured }}
+{{ with .Site.Params.Sidebar.Featured -}}
 <div class="featured">
   <h3 class="pb-2 border-bottom">{{ i18n "featured" }}</h3>
   <ul class="list-unstyled">
-    {{ range $idx, $item := .Item }}
-      {{ with $.Site.GetPage $item.path }}
+    {{- range $idx, $item := .Item }}
+      {{- with $.Site.GetPage $item.path -}}
       <li class="mb-3">
         <div class="row no-gutters">
-          {{ if $.Site.Params.Sidebar.Featured.index }}
+          {{ if $.Site.Params.Sidebar.Featured.index -}}
           <div class="col col-auto featured-index">
             <span class="mr-2">{{ printf "%02d" (add $idx 1) }}</span>
           </div>
-          {{ end }}
+          {{- end }}
           <div class="{{ if $.Site.Params.Sidebar.Featured.index }}col-10{{ else }}col-12{{ end }}">
             <h6 class="mb-0">
               <a href="{{ .Permalink }}" class="text-decoration-only-hover">{{ .Title }}</a>
@@ -26,10 +26,10 @@
           </div>
         </div>
       </li>
-      {{ else }}
+      {{- else }}
         {{ errorf "Featured page '%s' not found." $item.path }}
-      {{ end }}
-    {{ end }}
+      {{- end }}
+    {{- end }}
   </ul>
 </div>
-{{ end }}
+{{- end }}

@@ -1,4 +1,4 @@
-{{ if .Site.Params.Search.Enabled }}
+{{ if .Site.Params.Search.Enabled -}}
 <div class="nav-search">
   <a class="text-muted text-decoration-none search-btn" href="#" aria-label="{{ i18n `search` }}">
     <svg xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@
   </a>
   <input class="border-0" type="search" placeholder="{{ i18n `search` }}" aria-label="{{ i18n `search` }}">
 </div>
-{{ end }}
+{{- end }}
