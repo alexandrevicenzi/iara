@@ -90,7 +90,7 @@
   <div class="copyright clearfix text-center">
     <div class="d-md-inline-block float-md-left">
       <i class="far fa-copyright"></i> {{ now.Format "2006"}} {{ with .Site.Params.Copyright }}{{ . }}{{ else }}{{ .Title }}{{ end }}
-      {{- with .Site.Params.License -}}
+      {{- with .Site.Params.License }}
       &middot; <a href="{{ .url }}" target="_blank">{{ .name | safeHTML }}</a>
       {{- end }}
     </div>
