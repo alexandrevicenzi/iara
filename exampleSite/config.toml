@@ -96,7 +96,7 @@ builtWith = false
       path = "post/math-typesetting.md"
 
       [[params.sidebar.featured.item]]
-      path = "post/rich-content.md"
+      path = "post/katex-support.md"
 
       [[params.sidebar.featured.item]]
       path = "post/emoji-support.md"
