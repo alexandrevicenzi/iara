@@ -3,9 +3,9 @@ services:
   app:
     build: .
     working_dir: /blog
-    command: hugo server -v --bind "0.0.0.0" --port 1313 --watch -t iara
+    command: hugo server -v --bind "0.0.0.0" --port 1313 --themesDir /themes -t iara --watch --debug
     ports:
       - "1313:1313"
     volumes:
       - ./exampleSite:/blog
-      - .:/blog/themes/iara
+      - ./:/themes/iara
