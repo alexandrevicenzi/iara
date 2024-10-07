@@ -10,7 +10,7 @@
 
 {{- $bootstrapmodules := slice $index $util $alert $button $collapse $carousel $dropdown $modal $tab -}}
 
-{{ if .Site.IsServer }}
+{{ if hugo.IsServer }}
   {{ $bootstrap := $bootstrapmodules | resources.Concat "js/bootstrap.js" }}
   <script type="text/javascript" async src="{{ $bootstrap.RelPermalink }}"></script>
 

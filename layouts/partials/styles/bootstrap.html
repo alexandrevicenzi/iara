@@ -1,7 +1,7 @@
-{{ if .Site.IsServer }}
-  {{- $style := resources.Get "sass/iara.scss" | resources.ToCSS -}}
+{{ if hugo.IsServer }}
+  {{- $style := resources.Get "sass/iara.scss" | css.Sass -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{- else -}}
-  {{- $style := resources.Get "sass/iara.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+  {{- $style := resources.Get "sass/iara.scss" | css.Sass | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ end }}

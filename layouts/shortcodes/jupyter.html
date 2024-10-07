@@ -37,7 +37,8 @@
   {{- $code := delimit .code "" "" -}}
   {{ highlight $code .ext "linenos=false" }}
 {{- end -}}
-{{- $notebook := getJSON .Params.src -}}
+{{- $res := .Page.Resources.Get .Params.src -}}
+{{- $notebook := $res.Content | transform.Unmarshal -}}
 {{- if and (ne $notebook.nbformat 4.0) (ne $notebook.nbformat 5.0) -}}
   {{- errorf "Jupyter shortcode supports nbformat version 4 and 5 only, '%s' is version %.f" .Params.src $notebook.nbformat -}}
 {{- end -}}

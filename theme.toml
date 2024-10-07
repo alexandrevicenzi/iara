@@ -4,7 +4,7 @@ licenselink = "https://github.com/alexandrevicenzi/iara/blob/master/LICENSE.md"
 description = "Feature rich Medium-like theme for Hugo."
 tags = ["blog", "responsive", "mobile", "search", "disqus", "google-analytics", "contact-form", "multilingual"]
 features = ["blog", "responsive", "shortcodes", "seo", "authors"]
-min_version = "0.65.0"
+min_version = "0.128.0"
 
 [author]
     name = "alexandrevicenzi"
