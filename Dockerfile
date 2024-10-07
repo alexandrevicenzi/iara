@@ -1,8 +1,8 @@
-FROM alpine:latest
+FROM alpine:edge
 
 RUN apk add hugo
 
-RUN mkdir /blog
+RUN mkdir /app
 RUN mkdir -p /themes/iara
 
-USER 1000:1000
+RUN hugo new site /app/blog
